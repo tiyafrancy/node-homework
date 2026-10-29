@@ -24,7 +24,7 @@ const register = async (req, res) => {
         return res.status(400).json({ message: error.message });
     }
 
-    const { name, email, password } = req.body;
+    const { name, email, password } = value;
 
     if (!global.users) {
         global.users = [];

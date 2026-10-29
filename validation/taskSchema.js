@@ -1,4 +1,4 @@
-const Joi = require("Joi");
+const Joi = require("joi");
 
 const taskSchema = Joi.object({
     title: Joi.string().trim().min(3).max(30).required(),

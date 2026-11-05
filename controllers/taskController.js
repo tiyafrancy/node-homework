@@ -57,7 +57,7 @@ exports.index = async (req, res, next) => {
             isCompleted: task.is_completed
         }));
 
-        return res.status(200).json(result.rows);
+        return res.status(200).json(tasks);
     } catch (err) {
     return next(err);
     }

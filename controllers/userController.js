@@ -17,7 +17,7 @@ async function comparePassword(inputPassword, storedHash) {
     return crypto.timingSafeEqual(keyBuffer, derivedKey);
 }
 
-const register = async (req, res) => {
+const register = async (req, res, next) => {
     if (!req.body) req.body = {};
 
     const { error, value } = userSchema.validate(req.body, { abortEarly: false });
@@ -51,10 +51,10 @@ const register = async (req, res) => {
     }
 };
 
-const logon = async (req, res) => {
+const logon = async (req, res, next) => {
     if (!req.body) req.body = {};
     const { email, password } = req.body;
-    
+
     if (!email || !password) {
         return res.status(400).json({ message: "Email and password are required." });
     }

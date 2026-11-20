@@ -39,6 +39,9 @@ const authMiddleware = require("./middleware/auth");
 const taskRouter = require("./routes/taskRoutes");
 app.use("/api/tasks", authMiddleware, taskRouter);
 
+const analyticsRoutes = require("./routes/analyticsRoutes");
+app.use("/api/analytics", authMiddleware, analyticsRoutes);
+
 const notFound = require("./middleware/not-found");
 app.use(notFound);
 

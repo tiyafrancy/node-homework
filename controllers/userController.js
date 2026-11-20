@@ -70,7 +70,6 @@ const register = async (req, res, next) => {
         });
 
     } catch (err) {
-        console.error("REGISTER ERROR:", err);
         if (err.code === "P2002") {
             return res.status(400).json({ error: "Email already registered" });
         } else {

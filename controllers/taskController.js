@@ -121,9 +121,9 @@ exports.index = async (req, res, next) => {
             where: whereClause,
         });
 
-        if (tasks.length === 0) {
-            return res.status(404).json({ message: "No tasks found" });
-        }
+        // if (tasks.length === 0) {
+        //     return res.status(404).json({ message: "No tasks found" });
+        // }
 
         const totalPages = Math.ceil(totalTasks / limit);
         const pagination = {
